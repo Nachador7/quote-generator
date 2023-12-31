@@ -1,3 +1,13 @@
+:root {
+    --main-font-size: 2.75rem;
+    --secondary-font-size: 2rem;
+    --button-font-size: 1.2rem;
+    --main-color: black;
+    --secondary-color: #38a1f3;
+    --background-color: #ffffff;
+    --button-background: #333;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -5,10 +15,9 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23000000' fill-opacity='0.11'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
-    color :black;
-    font-weight: 700;
+    background: var(--background-color) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23000000' fill-opacity='0.11'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    font: 700 var(--main-font-size) 'Roboto', sans-serif;
+    color: var(--main-color);
     text-align: center;
     display: flex;
     align-items: center;
@@ -20,26 +29,28 @@ body {
     max-width: 900px;
     padding: 20px 30px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 10px 10px 10px rgba(0,0,0, 0.2);
 }
 
-.quote-text {
-    font-size: 2.75rem;
+.quote-text, .long-quote {
+    font-size: var(--main-font-size);
 }
 
 .long-quote {
-    font-size: 2rem;
+    font-size: var(--secondary-font-size);
 }
+
 .fa-quote-left {
     font-size: 4rem;
 }
 
 .quote-author {
     margin-top: 15px;
-    font-size: 2rem;
+    font-size: var(--secondary-font-size);
     font-weight: 400;
     font-style: italic;
+    color: var(--secondary-color);
 }
 
 .button-container {
@@ -50,12 +61,12 @@ body {
 
 button{
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: var(--button-font-size);
     height: 2.5rem;
     border: none;
     border-radius: 10px;
     color: white;
-    background: #333;
+    background: var(--button-background);
     outline: none;
     padding: 0.5rem 1.8rem;
     box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
@@ -71,7 +82,7 @@ button:active {
 }
 
 .twitter-button:hover {
-    color: #38a1f3;
+    color: var(--secondary-color);
 }
 
 .fa-twitter {
@@ -81,17 +92,17 @@ button:active {
 /* Loader */
 .loader {
     border: 16px solid #f3f3f3;
-    border-top: 16px solid #000000; 
+    border-top: 16px solid var(--main-color); 
     border-radius: 50%;
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
 
 /* Media Query: Tablet or Smaller */
 @media screen and (max-width: 1000px) {
@@ -99,6 +110,6 @@ button:active {
         margin: auto 10px;
     }
     .quote-text{
-        font-size: 2.5rem;
+        font-size: var(--secondary-font-size);
     }
 }
